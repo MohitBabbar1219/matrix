@@ -36,4 +36,9 @@ describe 'matrix' do
     expected_column = [3, 6, 9, 6]
     expect(StringMatrix.new("1 2 3\n4 5 6\n7 8 9\n8 7 6").get_column(column_ind)).to eq expected_column
   end
+  it 'should return column [1903, 3, 4] for string: "89 1903 3\n18 3 1\n9 4 800"' do
+    column_ind = 1
+    expected_column = [1903, 3, 4]
+    expect(StringMatrix.new("89 1903 3\n18 3 1\n9 4 800").get_column(column_ind)).to eq expected_column
+  end
 end
