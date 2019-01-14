@@ -16,4 +16,9 @@ describe 'matrix' do
     expected_row = [3, 4]
     expect(StringMatrix.new("1 2\n3 4").get_row(row_ind)).to eq expected_row
   end
+  it 'should return [[1, 2, 3], [4, 5, 6], [7, 8, 9]] for string: "1 2 3\n4 5 6\n7 8 9"' do
+    row_ind = 2
+    expected_row = [7, 8, 9]
+    expect(StringMatrix.new("1 2 3\n4 5 6\n7 8 9").get_row(row_ind)).to eq expected_row
+  end
 end

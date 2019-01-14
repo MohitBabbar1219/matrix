@@ -1,8 +1,6 @@
 class StringMatrix
   def initialize(string)
-    separated_rows = string.to_s.split("\n")
-    @matrix = separated_rows.length == 2 ? [[separated_rows[0].split(" ")[0].to_i, separated_rows[0].split(" ")[1].to_i],
-               [separated_rows[1].split(" ")[0].to_i, separated_rows[1].split(" ")[1].to_i]] : [[string.to_i]]
+    @matrix = string.to_s.split("\n").map { |one_d_arr_str| one_d_arr_str.to_s.split(" ").inject([]) { |prev, now| prev << now.to_s.to_i } }
   end
   def get_row(ind)
     @matrix[ind]
