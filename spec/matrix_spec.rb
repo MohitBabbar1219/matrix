@@ -26,10 +26,14 @@ describe 'matrix' do
     expected_column = [1]
     expect(StringMatrix.new("1").get_column(column_ind)).to eq expected_column
   end
-
   it 'should return column [3, 6, 9] for string: "1 2 3\n4 5 6\n7 8 9"' do
     column_ind = 2
     expected_column = [3, 6, 9]
     expect(StringMatrix.new("1 2 3\n4 5 6\n7 8 9").get_column(column_ind)).to eq expected_column
+  end
+  it 'should return column [3, 6, 9, 6] for string: "1 2 3\n4 5 6\n7 8 9\n8 7 6"' do
+    column_ind = 2
+    expected_column = [3, 6, 9, 6]
+    expect(StringMatrix.new("1 2 3\n4 5 6\n7 8 9\n8 7 6").get_column(column_ind)).to eq expected_column
   end
 end
