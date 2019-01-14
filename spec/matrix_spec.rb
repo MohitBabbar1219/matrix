@@ -21,4 +21,9 @@ describe 'matrix' do
     expected_row = [7, 8, 9]
     expect(StringMatrix.new("1 2 3\n4 5 6\n7 8 9").get_row(row_ind)).to eq expected_row
   end
+  it 'should return [1] for string: "1"' do
+    column_ind = 0
+    expected_column = [1]
+    expect(StringMatrix.new("1").get_column(column_ind)).to eq expected_column
+  end
 end

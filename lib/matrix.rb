@@ -5,4 +5,7 @@ class StringMatrix
   def get_row(ind)
     @matrix[ind]
   end
+  def get_column(ind)
+    @matrix.map { |row| row[ind] }
+  end
 end
